@@ -4,7 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Stock Management System</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="./style.css
+    "
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -19,7 +23,7 @@
           <!-- <div class="logo">
             <img src="./image/cool-log.png" alt="logo" style="width: 30%;margin: auto;" >
           </div> -->
-          <li><a href="#home">Home</a></li>
+          <li><a href="./dashboard.html">Dashboard</a></li>
           <li><a href="./purchase_billing.html">Purchase & Billing</a></li>
           <li><a href="./stock_import_data.html">Stock Import Data</a></li>
           <li><a href="./stock_export_data.html">Stock Export Data</a></li>
@@ -29,22 +33,67 @@
       </nav>
 
       <div id="all-sections">
-        <div class="links">
-          <div class="lo">
-            <a href="./log_out.html">login</a>
-          </div>
-          <div class="cre">
-            <a href="./signup-container.html">Create Account</a>
-          </div>
-        </div>
         <!-- <h2>home</h2> -->
-        <section id="home" class="main-section">
-          <div class="main">
-            <h1>
-              <large><strong>Stock</strong> Management System</large>
-            </h1>
-            <h2>Welcome to <strong>Stock Management System</strong></h2>
+        <section id="home" class="main-section" style="padding-block: 5em">
+          <h1 style="color: black; text-align: center">Dashboard</h1>
+          <div class="icons-container">
+            <div class="icon-box">
+              <!-- icons -->
+
+              <a href="./available_stock.html" style="text-decoration: none"
+                ><i class="fas fa-cube"></i> Available Stock</a
+              >
+            </div>
+
+            <div class="icon-box">
+              <!-- icons -->
+              <a href="./daily_report.html" style="text-decoration: none"
+                ><i class="far fa-chart-bar"></i> Daily Report</a
+              >
+            </div>
+
+            <div class="icon-box">
+              <!-- icons -->
+              <a href="./purchase_billing.html" style="text-decoration: none"
+                ><i class="fas fa-shopping-cart"></i> Purchase</a
+              >
+            </div>
+
+            <div class="icon-box">
+              <!-- icons -->
+              <a href="./stock_import_data.html" style="text-decoration: none"
+                ><i class="fas fa-arrow-up"></i> Stock Import</a
+              >
+            </div>
+            <div class="icon-box">
+              <!-- icons -->
+              <a href="./stock_export_data.html" style="text-decoration: none"
+                ><i class="fas fa-arrow-down"></i> Stock Export</a
+              >
+            </div>
+            <div class="icon-box">
+              <!-- icons -->
+              <a href="./history.html" style="text-decoration: none"
+                ><i class="fas fa-history"></i> History</a
+              >
+            </div>
           </div>
+
+          <style>
+            a {
+              color: rgb(52, 23, 3);
+              font-size: 30px;
+            }
+            a:hover {
+              color: rgb(255, 255, 255);
+              background-color: #713e05;
+              width: 500px;
+              /* padding: 30px; */
+              height: 250px;
+              border-radius: px;
+              text-align: center;
+            }
+          </style>
         </section>
       </div>
     </main>

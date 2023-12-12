@@ -27,13 +27,12 @@ section {
   background-color: #fff;
   padding: 20px;
   border-radius: 10px;
+  background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
+  width: 35%;
   margin: auto;
-}
-#signup-form a {
-  text-decoration: none;
-  color: white;
+  height: 92.5vh;
 }
 
 form {
