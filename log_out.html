@@ -1,33 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title> <link rel="stylesheet" href="./logout.css">
-</head>
-<body>
-    <button><a href="./index.html"  style="text-decoration: none;
-      color: #141414;
-      font-size: 16px;
-      background-color: #ffffff;
-      border-radius: 2px;
-  ">Go Back</a></button>
-    <section id="log_out" class="main-section">
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stock Master</title>
+    <link rel="stylesheet" href="./logout.css" />
+  </head>
+  <body>
+    <section id="log_out">
+      <div class="allcontainer">
         <div class="logo">
-            <img src="./image/cool-log.png" alt="logo" style="width: 30%;margin: auto;" >  
-          </div>
-          <h1>login form</h1>
+          <img src="./image/cool-log.png" alt="logo" style="width: 25%" />
+          <h2 style="text-transform: capitalize">login form</h2>
+        </div>
+
         <!-- <h1>log_out</h1>  -->
         <form action="">
-          
-          
-          <input type="text" placeholder="username">
-          <input type="email" name="" id="">
-          <input type="password" name="" id="">
-          <button>Log In</button> <a href="./signup-container.html" id="Create Account">Create Account</a>
+          <div id="formLogin">
+            <input type="text" placeholder="User name" />
+
+            <input type="password" name="" id="" placeholder="Enter password" />
+
+            <button class="login" style="width: 100%">Log In</button>
+
+            <!-- login footer -->
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                padding: 5px 0 5px 0;
+              "
+            >
+              <p>
+                If have no account<a
+                  href="./signup-container.html"
+                  style="text-decoration: none; color: rgba(0, 115, 255, 0.998)"
+                >
+                  Create Account </a
+                >Here
+              </p>
+              <p>
+                <a
+                  href="./index.html"
+                  style="text-decoration: none; color: rgba(0, 115, 255, 0.998)"
+                  >Go Back</a
+                >
+                Home
+              </p>
+            </div>
+          </div>
         </form>
+      </div>
     </section>
-      
-</body>
+  </body>
 </html>
