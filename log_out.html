@@ -17,9 +17,13 @@
         <!-- <h1>log_out</h1>  -->
         <form action="">
           <div id="formLogin">
-            <input type="text" placeholder="User name" />
+            <input type="text" name="userName" placeholder="User name" />
 
-            <input type="password" name="" id="" placeholder="Enter password" />
+            <input
+              type="password"
+              name="password"
+              placeholder="Enter password"
+            />
 
             <button class="login" style="width: 100%">Log In</button>
 
@@ -53,4 +57,36 @@
       </div>
     </section>
   </body>
+  <script>
+    document.querySelector(".login").addEventListener("click", async (e) => {
+      e.preventDefault();
+
+      try {
+        const userName = document.querySelector("input[name='userName']").value;
+        const password = document.querySelector("input[name='password']").value;
+
+        const credetials = {
+          userName,
+          password,
+        };
+
+        const url = "http://localhost:3000/users/login";
+        await fetch(url, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(credetials),
+        })
+          .then((data) => data.json())
+          .then((response) => {
+            let token = response.token;
+            localStorage.setItem("token", token);
+            console.log(response);
+          });
+      } catch (error) {
+        console.log(error);
+      }
+    });
+  </script>
 </html>

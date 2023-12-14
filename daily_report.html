@@ -1,42 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title><link rel="stylesheet" href="./dailyReport.css">
-</head>
-<body>
-    <button><a href="./index.html"  style="text-decoration: none;
-        color: #141414;
-        font-size: 16px;
-        background-color: #ffffff;
-        border-radius: 2px;
-    ">Go Back</a></button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./dailyReport.css" />
+  </head>
+  <body>
+    <button>
+      <a
+        href="./index.html"
+        style="
+          text-decoration: none;
+          color: #141414;
+          font-size: 16px;
+          background-color: #ffffff;
+          border-radius: 2px;
+        "
+        >Go Back</a
+      >
+    </button>
     <section id="daily_report" class="main-section">
-        <!-- <h1>daily_report</h1>  -->
-      
-        <div class="report-container">
+      <!-- <h1>daily_report</h1>  -->
 
-            <div class="logo">
-                <img src="./image/cool-log.png" alt="logo" style="width: 30%;margin: auto;" >  
-              </div>
-          <h2>Daily Report</h2>
-          <form action="#" method="post">
-              <label for="date">Date:</label>
-              <input type="date" id="date" name="date" required>
-      
-              <label for="sales">Total Sales:</label>
-              <input type="number" id="sales" name="sales" required>
-      
-              <label for="expenses">Expenses:</label>
-              <input type="number" id="expenses" name="expenses" required>
-      
-              <label for="notes">Additional Notes:</label>
-              <textarea id="notes" name="notes" rows="4"></textarea>
-      
-              <button type="submit">Submit Report</button>
-          </form>
+      <div class="report-container">
+        <div class="logo">
+          <img
+            src="./image/cool-log.png"
+            alt="logo"
+            style="width: 30%; margin: auto"
+          />
+        </div>
+        <h2>Daily Report</h2>
+        <form action="#" method="post">
+          <label for="date">Date:</label>
+          <input type="date" id="date" name="date" required />
+
+          <label for="sales">Total Sales:</label>
+          <input type="number" id="sales" name="sales" required />
+
+          <label for="expenses">Expenses:</label>
+          <input type="number" id="expenses" name="expenses" required />
+
+          <label for="notes">Additional Notes:</label>
+          <textarea id="notes" name="notes" rows="4"></textarea>
+
+          <button id="getProduct">Submit Report</button>
+        </form>
       </div>
-      </section>
-</body>
+    </section>
+
+    <script>
+      document.getElementById("getProduct").addEventListener("click", () => {
+        const url = "http://localhost:3000/products";
+        let token = localStorage.getItem("token");
+        fetch(url, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        })
+          .then((response) => response.json())
+          .then((product) => console.log(product.products))
+          .catch((error) => console.log(error));
+      });
+    </script>
+  </body>
 </html>
