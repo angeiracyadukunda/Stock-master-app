@@ -15,16 +15,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  
-} 
-/* #all-sections {
-  flex-grow: 1;
-  box-sizing: border-box;
-  position: relative;
-} */
+  padding: 0 2rem 0 2rem;
+}
+
 .main {
-  padding: 0;
-  margin: 0;
   height: 100vh;
   width: 100%;
   display: flex;
@@ -38,32 +32,31 @@ body {
 }
 
 .main-menu {
-  display: flex;
   height: 100vh;
+  margin-left: 15%;
 }
 #navbar {
   background-color: var(--main--color);
   color: #fff;
   width: 15%;
-  padding: 20px;
-  position: sticky;
+  position: fixed;
   top: 0;
-  box-sizing: border-box;
+  left: 0;
+  margin-left: 0.5rem;
 }
 
-#navbar ul {
+#navbar div ul {
   list-style: none;
-  padding: 0;
-  line-height: 49px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: fit-content;
 }
 
-#navbar li {
-  margin-bottom: 15px;
-}
-#navbar a:hover {
+#navbar div a:hover {
   background-color: white;
   color: black;
-  transition: 1s;
+  transition: 0.5s;
   border-radius: 5px;
 }
 
@@ -72,6 +65,33 @@ body {
   color: #fff;
   font-size: 16px;
   padding: 0.5rem;
+}
+
+.hidden {
+  display: none;
+}
+.account {
+  margin-top: 10px;
+  position: relative;
+  background-color: blueviolet;
+}
+.account ul li {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  border-bottom: 1px solid #fff;
+}
+.account ul li,
+.account ul li a {
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  font-size: small;
+  text-decoration: none;
+  list-style: none;
+  max-width: 20rem;
 }
 
 label {
@@ -84,7 +104,6 @@ form {
   gap: 10px;
   margin-top: 65px;
 }
-
 
 /* AVAILABBLE STOCK */
 .stock-container {
@@ -152,27 +171,30 @@ textarea {
   height: 92.5vh;
 }
 
- input {
-        padding: 8px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        box-sizing: border-box;
-      } 
+input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
 
-      button {
-        background-color: var(--main--color);
-        color: #fff;
-        padding: 12px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-      }
-      button:hover {
-        background-color: white;
-        color: var(--main--color);
-      } 
+button {
+  background-color: var(--main--color);
+  color: #fff;
+  padding: 12px;
+  border: 2px solid var(--main--color);
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: poppins;
+  font-size: large;
+}
+button:hover {
+  background-color: white;
+  color: var(--main--color);
+  border: 2px solid var(--main--color);
+}
 
-   /* index css */
+/* index css */
 
 h1,
 h2 {
@@ -199,35 +221,6 @@ strong {
   color: #fff;
   font-size: 16px;
 }
-
-/* .main-section {
-  margin-bottom: 20px;
-  border-radius: 10px;
-  width: 100%;
-} */
-
-/* SIGNUP CSS */
-/* 
-#signup-form {
-  display: flex;
-  font-family: Poppins;
-  justify-content: center;
-  font-size: larger;
-  flex-direction: column;
-  width: 100%;
-background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  width: 35%;
-  margin: auto;
-  height: 92.5vh;
-
-
-} */
-
 
 .signup-container {
   background-color: #fff;
@@ -317,10 +310,10 @@ textarea {
 }
 
 .allcontainer {
-      background-color: white;
-    height: 77vh;
-    border-radius: 11px;
-    width: 50%;
+  background-color: white;
+  height: 77vh;
+  border-radius: 11px;
+  width: 50%;
 }
 .allcontainer .logo {
   display: flex;
@@ -370,25 +363,6 @@ a {
   margin: auto;
   height: 92.5vh;
 }
-/* form {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-top: 16px;
-  background-color: #fff;
-  justify-content: center;
-  align-items: center;
-  width: 522px;
-  border-radius: 9px;
-  text-align: center;
-  height: 100vh;
-} */
-/* label {
-  font-weight: bold;
-} */
-
-
-/* sign up */
 
 .signup-container {
   background-color: #fff;
@@ -402,9 +376,6 @@ a {
   height: 92.5vh;
 }
 
-
-     
-
 /* import css*/
 
 .import-container {
@@ -416,13 +387,7 @@ a {
   width: 35%;
   margin: auto;
   height: 92.5vh;
-
 }
-
-
-/* label {
-  font-weight: bold;
-} */
 
 .icons-container {
   display: flex;
@@ -455,4 +420,51 @@ a {
 }
 .icon-box a i {
   color: rgb(148, 70, 221);
+}
+
+/* reset password section */
+
+#change_password {
+  top: 0;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 0 2rem 0;
+  font-family: poppins;
+  text-transform: capitalize;
+  color: rgb(148, 70, 221);
+  transform: 2s linear;
+  height: 100vh;
+}
+#main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50vw;
+  padding: 1rem;
+  border: 1px solid rgb(148, 70, 221);
+}
+
+#img {
+  display: flex;
+  flex-direction: column;
+  font-size: x-large;
+  align-items: center;
+}
+#form_input input {
+  border: 1px solid rgb(148, 70, 221);
+}
+#form_input label {
+  margin-left: 2.5vw;
+}
+
+#form_input input,
+#form_input button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  width: 90%;
+  margin-left: 5%;
 }

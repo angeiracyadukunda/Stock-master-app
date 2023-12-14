@@ -11,16 +11,16 @@
     />
   </head>
   <body>
-    <main class="main-menu">
-      <nav id="navbar">
-        <!-- <header>Stock Master</header> -->
-        <div id="image">
-          <img
-            src="./image/cool-log.png"
-            alt="here it's log"
-            style="width: 100%; cursor: pointer"
-          />
-        </div>
+    <nav id="navbar">
+      <!-- <header>Stock Master</header> -->
+      <div id="image">
+        <img
+          src="./image/cool-log.png"
+          alt="here it's log"
+          style="width: 100%; cursor: pointer"
+        />
+      </div>
+      <div>
         <ul>
           <li><a href="./dashboard.html">Dashboard</a></li>
           <li><a href="./purchase_billing.html">Purchase </a></li>
@@ -28,9 +28,34 @@
           <li><a href="./stock_export_data.html">Stock Export </a></li>
           <li><a href="./available_stock.html">Available Stock</a></li>
           <li><a href="./daily_report.html">Daily Report</a></li>
+          <li>
+            <a
+              style="cursor: pointer; background-color: #fff; color: blueviolet"
+              id="dropdown"
+            >
+              Account</a
+            >
+          </li>
         </ul>
-      </nav>
-
+      </div>
+      <section class="hidden change">
+        <ul>
+          <li>
+            <a
+              href="#change_password"
+              style="display: flex; justify-content: center"
+              >Change Password</a
+            >
+          </li>
+          <li>
+            <a href="#" style="display: flex; justify-content: center"
+              >Log out</a
+            >
+          </li>
+        </ul>
+      </section>
+    </nav>
+    <main class="main-menu">
       <div id="all-sections">
         <!-- <h2>home</h2> -->
         <section id="home" class="main-section">
@@ -101,6 +126,41 @@
           </div>
         </div>
 
+        <!-- Change password section form -->
+        <section id="change_password">
+          <div id="main-container">
+            <div id="img">
+              <img
+                src="./image/cool-log.png"
+                alt="LOGO"
+                style="max-width: 200px"
+              />
+              <p>Chage password</p>
+            </div>
+            <form action="" id="form_input">
+              <label for="pass">New Password</label>
+              <input
+                type="text"
+                name=""
+                id="pass"
+                placeholder="New password"
+              /><br />
+
+              <label for="Cpass">Confirm Password</label>
+              <input
+                type="password"
+                name=""
+                id="Cpass"
+                placeholder="Confirm password"
+              /><br />
+
+              <button>Change Password</button>
+            </form>
+          </div>
+        </section>
+
+        <!-- end of changing password -->
+
         <style>
           a {
             color: rgb(52, 23, 3);
@@ -109,5 +169,23 @@
         </style>
       </div>
     </main>
+    <script>
+      document.getElementById("dropdown").addEventListener("click", () => {
+        let classes = document.querySelector(".change");
+        let ch = "",
+          rh = "";
+        if (classes.classList.contains("hidden")) {
+          ch = "account";
+          rh = "hidden";
+        }
+        if (classes.classList.contains("account")) {
+          ch = "hidden";
+          rh = "account";
+        }
+        document.querySelector(".change").classList.add(ch);
+
+        document.querySelector(".change").classList.remove(rh);
+      });
+    </script>
   </body>
 </html>
