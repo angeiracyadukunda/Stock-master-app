@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Management History</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Add your CSS styles here */
+        /* Example styles for a simple table layout */
+
+        body{
+            background-color: #3d3123;
+        }
+
+        .history-container{ 
+
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        width: 50%;
+        margin: auto;
+        height: 92.5vh;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body >
+    
+    <div class="history-container">
+        <div class="logo">
+            <img
+              src="./image/cool-log.png"
+              alt="logo"
+              style="width: 30%; margin: auto"
+            />
+          </div>
+    <h1>Stock Management History</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Action</th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody id="historyTableBody">
+            <!-- History entries will be added dynamically here using JavaScript -->
+        </tbody>
+    </table>
+</div>
+    <script>
+        // Example JavaScript to dynamically populate the table with history entries
+        // In a real application, you would fetch data from a database or API
+
+        // Sample data for illustration
+        const stockHistory = [
+            { date: '2023-01-15', action: 'Receipt', details: 'Received 100 units from Supplier A.' },
+            { date: '2023-01-20', action: 'Issue', details: 'Issued 20 units for customer order.' },
+            // Add more entries as needed
+        ];
+
+        // Function to populate the table with history entries
+        function populateHistoryTable() {
+            const historyTableBody = document.getElementById('historyTableBody');
+
+            stockHistory.forEach(entry => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${entry.date}</td>
+                    <td>${entry.action}</td>
+                    <td>${entry.details}</td>
+                `;
+                historyTableBody.appendChild(row);
+            });
+        }
+
+        // Call the function to populate the table on page load
+        populateHistoryTable();
+    </script>
+
+    <style>
+   
+    </style>
+</body>
+</html>
