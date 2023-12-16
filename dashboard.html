@@ -28,7 +28,8 @@
           <li><a href="./stock_export_data.html">Stock Export </a></li>
           <li><a href="./available_stock.html">Available Stock</a></li>
           <li><a href="./daily_report.html">Daily Report</a></li>
-          <li>
+          <li><a href="./history.html">History</a></li>
+          <!-- <li>
             <a
               style="cursor: pointer; background-color: #fff; color: blueviolet"
               id="dropdown"
@@ -36,8 +37,8 @@
               Account</a
             >
           </li>
-        </ul>
-      </div>
+        </ul> -->
+      <!-- </div>
       <section class="hidden change">
         <ul>
           <li>
@@ -53,15 +54,14 @@
             >
           </li>
         </ul>
-      </section>
+      </section> -->
     </nav>
     <main class="main-menu">
-      <div id="all-sections">
         <!-- <h2>home</h2> -->
         <section id="home" class="main-section">
           <h1
             style="
-              color: black;
+              color: #fff;
               text-align: center;
               font-family: Poppins;
               text-transform: uppercase;
@@ -71,9 +71,13 @@
           >
             Dashboard
           </h1>
-        </section>
+       
+        <!-- <div class="main-1"> -->
+          <!-- <h1>DASHBORD</h1> -->
         <div class="icons-container">
+          
           <div class="icon-box">
+            
             <!-- icons -->
             <a
               href="./available_stock.html"
@@ -125,67 +129,14 @@
             >
           </div>
         </div>
+      <!-- </div> -->
 
         <!-- Change password section form -->
-        <section id="change_password">
-          <div id="main-container">
-            <div id="img">
-              <img
-                src="./image/cool-log.png"
-                alt="LOGO"
-                style="max-width: 200px"
-              />
-              <p>Chage password</p>
-            </div>
-            <form action="" id="form_input">
-              <label for="pass">New Password</label>
-              <input
-                type="text"
-                name=""
-                id="pass"
-                placeholder="New password"
-              /><br />
-
-              <label for="Cpass">Confirm Password</label>
-              <input
-                type="password"
-                name=""
-                id="Cpass"
-                placeholder="Confirm password"
-              /><br />
-
-              <button>Change Password</button>
-            </form>
-          </div>
-        </section>
+        
 
         <!-- end of changing password -->
-
-        <style>
-          a {
-            color: rgb(52, 23, 3);
-            font-size: 30px;
-          }
-        </style>
-      </div>
-    </main>
-    <script>
-      document.getElementById("dropdown").addEventListener("click", () => {
-        let classes = document.querySelector(".change");
-        let ch = "",
-          rh = "";
-        if (classes.classList.contains("hidden")) {
-          ch = "account";
-          rh = "hidden";
-        }
-        if (classes.classList.contains("account")) {
-          ch = "hidden";
-          rh = "account";
-        }
-        document.querySelector(".change").classList.add(ch);
-
-        document.querySelector(".change").classList.remove(rh);
-      });
+      </section>
+        
     </script>
   </body>
 </html>

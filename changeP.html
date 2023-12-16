@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section id="change_password">
+      <div class="wrapper">
+        <div id="main-container">
+          <div id="img">
+            <img
+              src="./image/cool-log.png"
+              alt="LOGO"
+              style="max-width: 200px"
+            />
+            <h2>Chage password</h2>
+          </div>
+          <form action="" id="form_input">
+            <input  type="text"  name=""  id="pass"  placeholder="New password"/><br /> <br><br>
+            <input type="password" name=""   id="Cpass"  placeholder="Confirm password"  /><br />
+
+            <button>Change Password</button>
+          </form>
+        </div>
+        </div>
+      </section>
+
+      <!-- <style>
+        a {
+          color: rgb(52, 23, 3);
+          font-size: 30px;
+        }
+      </style>
+    </div>
+  </main>
+  <script>
+    document.getElementById("dropdown").addEventListener("click", () => {
+      let classes = document.querySelector(".change");
+      let ch = "",
+        rh = "";
+      if (classes.classList.contains("hidden")) {
+        ch = "account";
+        rh = "hidden";
+      }
+      if (classes.classList.contains("account")) {
+        ch = "hidden";
+        rh = "account";
+      }
+      document.querySelector(".change").classList.add(ch);
+
+      document.querySelector(".change").classList.remove(rh);
+    }); -->
+<style>
+  body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10em;
+  background: #3d3123;
+
+}
+form input{
+  outline: none;
+  padding:  10px;
+  font-size: 18px;
+  background: none;
+  caret-color: #5372F0;
+  border-radius: 5px;
+  border: 1px solid #bfbfbf;
+  border-bottom-width: 2px;
+  transition: all 0.2s ease;
+}
+.wrapper {
+    width: 380px;
+    padding: 40px 30px 50px 30px;
+    background: #fff;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 10px 10px 15px rgba(0,0,0,0.1);
+}
+
+  button{
+    height: 50px;
+    width: 380px;
+    margin-top: 30px;
+    color: #fff;
+    padding: 0;
+    border: none;
+    border-radius: 8px;
+    background: #3d3123;
+    cursor: pointer;
+    border-bottom: 2px solid rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+</style>
