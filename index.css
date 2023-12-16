@@ -5,8 +5,7 @@
 }
 
 body {
-  background: linear-gradient(90deg, rgb(0 0 0 / 40%), rgb(10 10 10 / 40%)),
-    url(./image/istock.jpg);
+  background: linear-gradient(90deg, rgb(0 0 0 / 40%), rgb(18 7 0)), url(./image/istock.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -14,12 +13,11 @@ body {
   height: 100vh;
   overflow-y: hidden;
 }
-.main {
-  text-align: center;
+/* .main {
+  text-align: justify;
   color: aliceblue;
-  margin-top: 7em;
   font-size: xx-large;
-}
+} */
 
 img {
   width: 100%;
@@ -27,13 +25,13 @@ img {
 }
 
 .navbar {
-  background-color: #492d17;
+  background-color: #fff;
   height: 124px;
   width: fit-content;
   margin-left: auto;
   display: flex;
   padding: 30px;
-  border-radius: 58px;
+  border-radius: 20px;
   margin-top: 4em;
   text-align: center;
   align-items: center;
@@ -42,13 +40,13 @@ img {
 .navbar a {
   float: left;
   display: block;
-  color: #f2f2f2;
+  color: #492d17;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
 }
 
 .navbar a:hover {
-  background-color: #ddd;
+  background-color: #665858;
   color: black;
 }

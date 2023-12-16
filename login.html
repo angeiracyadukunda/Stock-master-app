@@ -3,10 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Stock Master</title>
+    <title>LOGIN FORM</title>
     <link rel="stylesheet" href="./style.css" />
   </head>
-  <body>
+  <body>  
+    <!---------GO BACK BUTTON  --------->
+
+    <button><a href="./dashboard.html" style="text-decoration: none;
+      color: #141414;
+      font-size: 16px;
+      background-color: #ffffff;
+      border-radius: 2px;
+  ">Go Back</a></button>
+
+  <!---------------------GO BACK BUTTON ENDS FROM HERE -->
+
+   <!-------------LOGIN FORM PART -->
     <section id="login">
         
           <div class="wrapper">
@@ -38,6 +50,13 @@
           </div>
           <script src="script.js"></script>
     </section>
+
+    <!----------------LOGIN FORM ENDS FROM HERE -->
+
+
+
+
+    <!--------------ITS IS STYLED IN HERE -->
 
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
@@ -187,37 +206,7 @@ form input[type="submit"]:hover{
   box-shadow: 0 5px 10px rgba(0,0,0,0.2);
 }
     </style>
+
+    <!-- STYLE ENDS FROM HERE -->
   </body>
-  <!-- <script>
-    document.querySelector(".login").addEventListener("click", async (e) => {
-      e.preventDefault();
-
-      try {
-        const userName = document.querySelector("input[name='userName']").value;
-        const password = document.querySelector("input[name='password']").value;
-
-        const credetials = {
-          userName,
-          password,
-        };
-
-        const url = "http://localhost:3000/users/login";
-        await fetch(url, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(credetials),
-        })
-          .then((data) => data.json())
-          .then((response) => {
-            let token = response.token;
-            localStorage.setItem("token", token);
-            console.log(response);
-          });
-      } catch (error) {
-        console.log(error);
-      }
-    });
-  </script> -->
 </html>
