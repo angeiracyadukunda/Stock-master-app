@@ -3,13 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>AVAILABLE-STOCK</title>
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
+    <!-------------GO BACK BUTTON -->
+
     <button>
       <a
-        href="./index.html"
+        href="./dashboard.html"
         style="
           text-decoration: none;
           color: #141414;
@@ -20,8 +22,12 @@
         >Go Back</a
       >
     </button>
+
+    <!-- GO BACK BUTTONS ENDS FROM HERE -->
+
+    <!-- AVAILABLE STOCK STARTS FROM HERE  LINKED TO STYLE.CSS -->
+
     <section id="available_stock" class="main-section">
-      <!-- <h1>available_stock</h1>  -->
       <div class="stock-container">
         <div class="logo">
           <img
@@ -31,60 +37,30 @@
           />
         </div>
         <h2>Available Stock</h2>
-        <table class="stockAvailable">
+        <table>
           <thead>
             <tr>
               <th>Product Name</th>
               <th>Current Quantity</th>
-              <th>Price Perunit</th>
-              <th>Total Price</th>
-              <th>Created At</th>
+              <th>Last Restock Date</th>
             </tr>
           </thead>
           <tbody>
-            <script>
-              const url = "http://localhost:3000/products";
-              let token = localStorage.getItem("token");
-              if (!token || token === null) {
-                location.href = "login.html";
-              } else {
-                fetch(url, {
-                  method: "GET",
-                  headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `Bearer ${token}`,
-                  },
-                })
-                  .then((response) => response.json())
-                  .then((product) => {
-                    const allProducts = product.products;
-                    allProducts.map((product) => {
-                      document.querySelector(
-                        ".stockAvailable"
-                      ).innerHTML += `<tr>
-                      <td>${product.name}</td>
-                      <td>${product.quantity}</td>
-                      <td>${product.pricePerUnit}</td>
-                      <td>${product.totalPrice}</td>
-                      <td>${product.createdAt.split("T")[0]}</td>
-
-                  </tr>`;
-                    });
-                  })
-                  .catch((error) => console.log(error));
-              }
-              // });
-            </script>
-
-            <!-- <tr>
+            <tr>
+              <td>Concrete Blocks</td>
+              <td>1500</td>
+              <td>2023-06-15</td>
+            </tr>
+            <tr>
               <td>Bricks</td>
               <td>2000</td>
               <td>2023-06-18</td>
-            </tr> -->
-            <!-- Add more product rows as needed -->
+            </tr>
           </tbody>
         </table>
       </div>
     </section>
+
+    <!-- AVAILABLE STOCK ENDS FROM HERE -->
   </body>
 </html>

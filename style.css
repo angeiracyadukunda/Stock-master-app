@@ -11,10 +11,17 @@ body {
   margin: 0;
   font-family: "Poppins", sans-serif;
   display: flex;
-  height: 100vh;
-  background-color: #3d3123;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
+  margin-top: 25vh;
+  align-items: center;
+  background-color: #3d3123;
+}
+
+#home {
+  max-width: fit-content;
+  display: flex;
+  margin-left: 19%;
 }
 
 .main {
@@ -30,9 +37,10 @@ body {
   background-size: cover;
 }
 
+/*  NAV  CSS STARTS FROM HERE */
 #navbar {
   background-color: #edeff6;
-  width: 18%;
+  width: 19%;
   position: fixed;
   top: 0;
   left: 0;
@@ -43,13 +51,13 @@ body {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding: 50px;
+  /* padding: 50px; */
   justify-content: center;
   align-items: flex-start;
 }
 
 #navbar div a:hover {
-  background-color: white;
+  background-color: #3d3123;
   color: black;
   transition: 0.5s;
   border-radius: 5px;
@@ -59,7 +67,8 @@ body {
   text-decoration: none;
   color: #3d3123;
   font-size: 16px;
-  padding: 0.5rem;
+  line-height: 4;
+  margin-left: 1.5rem;
 }
 
 .hidden {
@@ -105,7 +114,6 @@ form {
   background-color: #fff;
   padding: 20px;
   border-radius: 10px;
-  /* background-color: #3d3123; */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
   max-width: fit-content;
@@ -129,18 +137,11 @@ td {
 th {
   background-color: #f2f2f2;
 }
-
-/* DAILY REPORT CSS  */
-.report-container {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  /* background-color: #fff; */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  width: 60%;
-  margin: auto;
-  height: 92.5vh;
+input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
 }
 
 input,
@@ -155,7 +156,28 @@ textarea {
   resize: vertical;
 }
 
-.export-container {
+.import-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: fit-content;
+  margin: auto;
+  height: 92.5vh;
+}
+.purchase-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: fit-content;
+  margin: auto;
+  height: 92.5vh;
+}
+
+.signup-container {
   background-color: #fff;
   padding: 20px;
   border-radius: 10px;
@@ -166,11 +188,29 @@ textarea {
   height: 92.5vh;
 }
 
-input {
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
+/* DAILY REPORT CSS  */
+
+.report-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  /* width: 60%; */
+  max-width: fit-content;
+  margin: auto;
+  height: 92.5vh;
+}
+.export-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  /* width: 60%; */
+  max-width: fit-content;
+  margin: auto;
+  height: 92.5vh;
 }
 
 button {
@@ -188,9 +228,10 @@ button:hover {
   color: var(--main--color);
   border: 2px solid var(--main--color);
 }
-strong {
+/* strong {
   color: #f69900;
-}
+} */
+
 .links {
   position: absolute;
   display: flex;
@@ -208,17 +249,6 @@ strong {
   font-size: 16px;
 }
 
-.signup-container {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  /* background-color: #fff; */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  width: 60%;
-  margin: auto;
-  height: 92.5vh;
-}
 .logo h2 {
   margin-top: -1rem;
 }
@@ -252,23 +282,7 @@ td {
 th {
   background-color: #f2f2f2;
 }
-.purchase-container {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  width: 60%;
-  margin: auto;
-  height: 92.5vh;
-}
-.report-container {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
+
 label {
   font-weight: bold;
 }
@@ -297,42 +311,16 @@ a {
   color: #3d3123;
 }
 
-/* purchase css */
-
-.purchase-container {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  width: 60%;
-  margin: auto;
-  height: 92.5vh;
-}
-
-/* import css*/
-
-.import-container {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  width: 60%;
-  margin: auto;
-  height: 92.5vh;
-}
-
+/* ICONS CONTAINER IN DASHBORD */
 .icons-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  /* gap: -23rem; */
-  width: 134%;
-  height: 69vh;
+  justify-content: space-between;
+  max-width: fit-content;
   background: #edeff6;
   align-items: center;
-  /* margin-left: 21em; */
+  gap: 1rem;
+  padding: 2rem;
 }
 
 .icon-box {
@@ -356,20 +344,4 @@ a {
 }
 .icon-box a i {
   color: rgb(148, 70, 221);
-}
-
-#main-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  max-width: fit-content;
-  padding: 1rem;
-  border: 1px solid rgb(148, 70, 221);
-}
-
-#img {
-  display: flex;
-  flex-direction: column;
-  font-size: x-large;
-  align-items: center;
 }
