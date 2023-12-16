@@ -1,50 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title><link rel="stylesheet" href="./style.css">
-</head>
-<body>
-
-    <button><a href="./index.html" style="text-decoration: none;
-        color: #141414;
-        font-size: 16px;
-        background-color: #ffffff;
-        border-radius: 2px;
-    ">Go Back</a></button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <button>
+      <a
+        href="./index.html"
+        style="
+          text-decoration: none;
+          color: #141414;
+          font-size: 16px;
+          background-color: #ffffff;
+          border-radius: 2px;
+        "
+        >Go Back</a
+      >
+    </button>
     <section id="available_stock" class="main-section">
+      <!-- <h1>available_stock</h1>  -->
+      <div class="stock-container">
+        <div class="logo">
+          <img
+            src="./image/cool-log.png"
+            alt="logo"
+            style="width: 30%; margin: auto"
+          />
+        </div>
+        <h2>Available Stock</h2>
+        <table class="stockAvailable">
+          <thead>
+            <tr>
+              <th>Product Name</th>
+              <th>Current Quantity</th>
+              <th>Price Perunit</th>
+              <th>Total Price</th>
+              <th>Created At</th>
+            </tr>
+          </thead>
+          <tbody>
+            <script>
+              const url = "http://localhost:3000/products";
+              let token = localStorage.getItem("token");
+              if (!token || token === null) {
+                location.href = "login.html";
+              } else {
+                fetch(url, {
+                  method: "GET",
+                  headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${token}`,
+                  },
+                })
+                  .then((response) => response.json())
+                  .then((product) => {
+                    const allProducts = product.products;
+                    allProducts.map((product) => {
+                      document.querySelector(
+                        ".stockAvailable"
+                      ).innerHTML += `<tr>
+                      <td>${product.name}</td>
+                      <td>${product.quantity}</td>
+                      <td>${product.pricePerUnit}</td>
+                      <td>${product.totalPrice}</td>
+                      <td>${product.createdAt.split("T")[0]}</td>
 
-        
-        <!-- <h1>available_stock</h1>  -->
-        <div class="stock-container">
-            <div class="logo">
-                <img src="./image/cool-log.png" alt="logo" style="width: 30%;margin: auto;" >  
-              </div>
-          <h2>Available Stock</h2>
-          <table>
-              <thead>
-                  <tr>
-                      <th>Product Name</th>
-                      <th>Current Quantity</th>
-                      <th>Last Restock Date</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  <tr>
-                      <td>Concrete Blocks</td>
-                      <td>1500</td>
-                      <td>2023-06-15</td>
-                  </tr>
-                  <tr>
-                      <td>Bricks</td>
-                      <td>2000</td>
-                      <td>2023-06-18</td>
-                  </tr>
-                  <!-- Add more product rows as needed -->
-              </tbody>
-          </table>
+                  </tr>`;
+                    });
+                  })
+                  .catch((error) => console.log(error));
+              }
+              // });
+            </script>
+
+            <!-- <tr>
+              <td>Bricks</td>
+              <td>2000</td>
+              <td>2023-06-18</td>
+            </tr> -->
+            <!-- Add more product rows as needed -->
+          </tbody>
+        </table>
       </div>
-      </section>
-</body>
+    </section>
+  </body>
 </html>

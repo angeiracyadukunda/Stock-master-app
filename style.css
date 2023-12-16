@@ -15,7 +15,6 @@ body {
   background-color: #3d3123;
   align-items: center;
   justify-content: center;
- 
 }
 
 .main {
@@ -38,7 +37,6 @@ body {
   top: 0;
   left: 0;
   height: 100vh;
- 
 }
 #navbar div ul {
   list-style: none;
@@ -110,7 +108,7 @@ form {
   /* background-color: #3d3123; */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
-  width: 60%;
+  max-width: fit-content;
   margin: auto;
   height: 92.5vh;
 }
@@ -285,7 +283,7 @@ textarea {
   align-items: center;
   justify-content: center;
 }
- 
+
 .allcontainer .logo {
   display: flex;
   flex-direction: column;
@@ -364,7 +362,7 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 50vw;
+  max-width: fit-content;
   padding: 1rem;
   border: 1px solid rgb(148, 70, 221);
 }
@@ -375,4 +373,3 @@ a {
   font-size: x-large;
   align-items: center;
 }
-
