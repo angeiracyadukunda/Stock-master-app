@@ -1,61 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STOCK-EXPORT</title><link rel="stylesheet" href="./style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STOCK-EXPORT</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
     <!-----------GO BACK BUTTON -->
-    <button><a href="./dashboard.html"  style="text-decoration: none;
-        color: #141414;
-        font-size: 16px;
-        background-color: #ffffff;
-        border-radius: 2px;
-    ">Go Back</a></button>
+    <button>
+      <a
+        href="./dashboard.html"
+        style="
+          text-decoration: none;
+          color: #141414;
+          font-size: 16px;
+          background-color: #ffffff;
+          border-radius: 2px;
+        "
+        >Go Back</a
+      >
+    </button>
 
     <!-- GO BACK BUTTON ENDS FROM HERE -->
 
-
-
-  <!--------------STOCK EXPORT  -->
-<section id="stock_export_data" class="main-section">
-
-    <div class="export-container">
-
+    <!--------------STOCK EXPORT  -->
+    <section id="stock_export_data" class="main-section">
+      <div class="export-container">
         <!----LOGO -->
 
         <div class="logo">
-            <img src="./image/cool-log.png" alt="logo" style="width: 30%;margin: auto;" >  
-          </div>
-          <!-- LOGO END HERE -->
+          <img
+            src="./image/cool-log.png"
+            alt="logo"
+            style="width: 30%; margin: auto"
+          />
+        </div>
+        <!-- LOGO END HERE -->
 
-
-      <h2>Stock Export Data</h2>
-      <form id="export-form" action="#" method="post">
+        <h2>Stock Export Data</h2>
+        <form id="export-form">
           <label for="product">Product:</label>
           <select id="product" name="product" required>
-              <option value="product1">Product 1</option>
-              <option value="product2">Product 2</option>
-              <option value="product3">Product 3</option>
-              <!-- Add more product options as needed -->
+            <option value="product1">Product 1</option>
+            <option value="product2">Product 2</option>
+            <option value="product3">Product 3</option>
           </select>
-  
-          <label for="quantity">Quantity:</label>
-          <input type="number" id="quantity" name="quantity" required>
-  
-          <label for="destination">Destination:</label>
-          <input type="text" id="destination" name="destination" required>
-  
-          <label for="export-date">Date of Export:</label>
-          <input type="date" id="export-date" name="export-date" required>
-  
-          <button type="submit">Export</button>
-      </form>
-  </div>
-  </section>
 
-  <!---STOCK EXPRT END FROM HERE -->
-  
-</body>
+          <label for="quantity">Quantity:</label>
+          <input type="number" id="quantity" name="quantity" />
+
+          <label for="destination">Price Per Unit</label>
+          <input type="text" id="price" name="destination" />
+
+          <label for="destination">Total Price </label>
+          <input
+            type="text"
+            id="totalPrice"
+            name="destination"
+            disabled
+            style="cursor: not-allowed"
+          />
+
+          <button type="submit" id="saleBTN">Make Sale</button>
+        </form>
+      </div>
+    </section>
+
+    <!---STOCK EXPRT END FROM HERE -->
+    <script src="./js/sales.js"></script>
+  </body>
 </html>

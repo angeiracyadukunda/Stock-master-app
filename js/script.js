@@ -5,8 +5,7 @@ const form = document.querySelector("form");
   (pInput = pField.querySelector("input"));
 
 form.onsubmit = async (e) => {
-  e.preventDefault(); //preventing from form submitting
-  //if email and password is blank then add shake class in it else call specified function
+  e.preventDefault();
   eInput.value == "" ? eField.classList.add("shake", "error") : checkEmail();
   pInput.value == "" ? pField.classList.add("shake", "error") : checkPass();
 
