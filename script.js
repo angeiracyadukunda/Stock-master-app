@@ -60,27 +60,31 @@ form.onsubmit = async (e) => {
     !eField.classList.contains("error") &&
     !pField.classList.contains("error")
   ) {
-    // window.location.href = form.getAttribute("action"); //redirecting user to the specified url which is inside action attribute of form tag
     try {
-      let email = document.querySelector("input[name='email']").value;
-      let password = document.querySelector("input[name='password']").value;
+      const email = document.querySelector("input[name='email']").value;
+      const password = document.querySelector("input[name='password']").value;
       const credetial = {
         email,
         password,
       };
 
-      // fetching procees
-      const url = "http://localhost:3000/users/login";
+      const url = "http://localhost:3000/users/login"; // end point (API)
       await fetch(url, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(credetial),
       })
         .then((data) => data.json())
-        .then((response) => console.log(response))
-        .catch((err) => console.log(err));
+        .then((response) => {
+          console.log(response);
+          if (response.message === "log in successfully👏") {
+            localStorage.setItem("token", response.token);
+            location.href = "dashboard.html";
+          } else {
+            location.href = "login.html";
+          }
+        })
+        .catch((error) => console.log(error));
     } catch (error) {
       console.log(error);
     }

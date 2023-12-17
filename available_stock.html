@@ -37,25 +37,51 @@
           />
         </div>
         <h2>Available Stock</h2>
-        <table>
+        <table id="table">
           <thead>
             <tr>
               <th>Product Name</th>
               <th>Current Quantity</th>
-              <th>Last Restock Date</th>
+              <th>Price Perunit</th>
+              <th>Total Price</th>
+              <th>Date</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Concrete Blocks</td>
-              <td>1500</td>
-              <td>2023-06-15</td>
+            <!-- FETCHING AVAILABLE STOCK -->
+            <script>
+              try {
+                const url = "http://localhost:3000/products";
+                const token = localStorage.getItem("token");
+                console.log(token);
+                fetch(url, {
+                  method: "GET",
+                  headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${token}`,
+                  },
+                })
+                  .then((data) => data.json())
+                  .then((response) => {
+                    const products = response.products;
+                    products.map((product) => {
+                      document.getElementById("table").innerHTML += `<tr key=${
+                        product.id
+                      }>
+              <td>${product.name}</td>
+              <td>${product.quantity}</td>
+              <td>${product.pricePerUnit}</td>
+              <td>${product.totalPrice}</td>
+              <td>${product.createdAt.split("T")[0]}</td>
             </tr>
-            <tr>
-              <td>Bricks</td>
-              <td>2000</td>
-              <td>2023-06-18</td>
-            </tr>
+                      `;
+                    });
+                  })
+                  .catch((error) => console.log(error));
+              } catch (error) {
+                console.log(error);
+              }
+            </script>
           </tbody>
         </table>
       </div>
