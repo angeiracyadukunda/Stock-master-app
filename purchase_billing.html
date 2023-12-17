@@ -45,21 +45,22 @@
 
         <h2>Purchase & Billing</h2>
 
-        <form action="#" method="post">
-          <label for="product">Product Name:</label>
-          <input type="text" id="product" name="product" required />
+        <form >
+          <label for="purchasedProd">Product Name:</label>
+          <input type="text" id="purchasedProd" name="product" />
 
-          <label for="quantity">Quantity:</label>
-          <input type="number" id="quantity" name="quantity" min="1" required />
+          <label for="quantityNumber">Quantity:</label>
+          <input type="number" id="quantityNumber" name="quantity" min="1"  />
 
-          <label for="price">Price per Unit:</label>
-          <input type="number" id="price" name="price" min="1" required />
+          <label for="pricePurchase">Price per Unit:</label>
+          <input type="number" id="pricePurchase" name="price" min="1" />
 
-          <button type="submit">Record Product</button>
+          <button type="submit" id="record-product">Record Product</button>
         </form>
 
       </div>
     </section>
+    <script src="./js/purchase.js"></script>
 
     <!--------PURCHASE ENDS FROM HERE -->
   </body>
