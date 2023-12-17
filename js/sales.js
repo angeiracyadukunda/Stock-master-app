@@ -30,3 +30,8 @@ document.getElementById("saleBTN").addEventListener("click", function (e) {
     console.log("Product sold successfully 👏");
   }
 });
+
+
+
+
+
