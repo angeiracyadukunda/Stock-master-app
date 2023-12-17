@@ -53,21 +53,22 @@
               try {
                 const url = "http://localhost:3000/products";
                 const token = localStorage.getItem("token");
-                console.log(token);
-                fetch(url, {
-                  method: "GET",
-                  headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `Bearer ${token}`,
-                  },
-                })
-                  .then((data) => data.json())
-                  .then((response) => {
-                    const products = response.products;
-                    products.map((product) => {
-                      document.getElementById("table").innerHTML += `<tr key=${
-                        product.id
-                      }>
+                if (token === "" || !token) location.href = "login.html";
+                else {
+                  fetch(url, {
+                    method: "GET",
+                    headers: {
+                      "Content-Type": "application/json",
+                      Authorization: `Bearer ${token}`,
+                    },
+                  })
+                    .then((data) => data.json())
+                    .then((response) => {
+                      const products = response.products;
+                      products.map((product) => {
+                        document.getElementById(
+                          "table"
+                        ).innerHTML += `<tr key=${product.id}>
               <td>${product.name}</td>
               <td>${product.quantity}</td>
               <td>${product.pricePerUnit}</td>
@@ -75,9 +76,10 @@
               <td>${product.createdAt.split("T")[0]}</td>
             </tr>
                       `;
-                    });
-                  })
-                  .catch((error) => console.log(error));
+                      });
+                    })
+                    .catch((error) => console.log(error));
+                }
               } catch (error) {
                 console.log(error);
               }
