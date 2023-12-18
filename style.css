@@ -10,12 +10,21 @@
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
+  background-color: #3d3123;
+}
+.containerAll {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 25vh;
   align-items: center;
-  background-color: #3d3123;
+  width: 80.5%;
+  gap: 2rem;
+  margin: 2rem 0 0 12%;
+}
+.containerAll div {
+  text-align: center;
+  color: aliceblue;
+  /* Other styles */
 }
 
 #home {
@@ -352,8 +361,12 @@ a {
     gap: 1rem;
   }
   div h1 {
-    font-size: small;
+    font-size: medium;
     word-wrap: break-word;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   #home {
     max-width: fit-content;
@@ -367,10 +380,14 @@ a {
   .icon-box a {
     word-wrap: break-word;
   }
-  #navbar {
+  #navbar ul {
     display: none;
   }
-}
-
-@media screen and (max-width: 800px) {
+  .containerAll {
+    margin: 0 0 0 2rem;
+  }
+  #navbar img {
+    max-width: 400px;
+    margin-top: 1.5rem;
+  }
 }
