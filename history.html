@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stock Management History</title>
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stock Sales History</title>
+    <link rel="stylesheet" href="style.css" />
     <style>
-        /* Add your CSS styles here */
-        /* Example styles for a simple table layout */
+      /* Add your CSS styles here */
+      /* Example styles for a simple table layout */
 
-        body{
-            background-color: #3d3123;
-        }
+      body {
+        background-color: #3d3123;
+      }
 
-        .history-container{ 
-
+      .history-container {
         background-color: #fff;
         border-radius: 10px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -22,87 +21,97 @@
         width: 50%;
         margin: auto;
         height: 92.5vh;
-        }
-        table {
-            border-collapse: collapse;
-            width: 100%;
-            margin-top: 20px;
-        }
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 20px;
+      }
 
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
 
-        th {
-            background-color: #f2f2f2;
-        }
+      th {
+        background-color: #f2f2f2;
+      }
     </style>
-</head>
+  </head>
 
-              <!----- GO BACK BUTTON -->
-<button><a href="./dashboard.html" style="text-decoration: none;
-    color: #141414;
-    font-size: 16px;
-    background-color: #ffffff;
-    border-radius: 2px;
-">Go Back</a></button>
+  <!----- GO BACK BUTTON -->
+  <button>
+    <a
+      href="./dashboard.html"
+      style="
+        text-decoration: none;
+        color: #141414;
+        font-size: 16px;
+        background-color: #ffffff;
+        border-radius: 2px;
+      "
+      >Go Back</a
+    >
+  </button>
 
-<!----------------------GO BACK ENDS FROM HERE -->
-<body >
-    
+  <!----------------------GO BACK ENDS FROM HERE -->
+  <body>
     <div class="history-container">
-        <div class="logo">
-            <img
-              src="./image/cool-log.png"
-              alt="logo"
-              style="width: 30%; margin: auto"
-            />
-          </div>
-    <h1>Stock Management History</h1>
+      <div class="logo">
+        <img
+          src="./image/cool-log.png"
+          alt="logo"
+          style="width: 30%; margin: auto"
+        />
+      </div>
+      <h1>Stock Management History</h1>
 
-    <table>
+      <table>
         <thead>
-            <tr>
-                <th>Date</th>
-                <th>Action</th>
-                <th>Details</th>
-            </tr>
+          <tr>
+            <th>Product Name</th>
+            <th>Price Per Unit</th>
+            <th>Quantity Sold</th>
+            <th>Total Amount Payed</th>
+            <th>Date</th>
+          </tr>
         </thead>
         <tbody id="historyTableBody">
-            <!-- History entries will be added dynamically here using JavaScript -->
+          <!-- History entries will be added dynamically here using JavaScript -->
         </tbody>
-    </table>
-</div>
+      </table>
+    </div>
     <script>
-        // Example JavaScript to dynamically populate the table with history entries
-        // In a real application, you would fetch data from a database or API
-
-        // Sample data for illustration
-        const stockHistory = [
-            { date: '2023-01-15', action: 'Receipt', details: 'Received 100 units from Supplier A.' },
-            { date: '2023-01-20', action: 'Issue', details: 'Issued 20 units for customer order.' },
-            // Add more entries as needed
-        ];
-
-        // Function to populate the table with history entries
-        function populateHistoryTable() {
-            const historyTableBody = document.getElementById('historyTableBody');
-
-            stockHistory.forEach(entry => {
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td>${entry.date}</td>
-                    <td>${entry.action}</td>
-                    <td>${entry.details}</td>
-                `;
-                historyTableBody.appendChild(row);
+      try {
+        const token = localStorage.getItem("token");
+        const url = "http://localhost:3000/sales/sales-history";
+        fetch(url, {
+          method: "GET",
+          headers: {
+            "Content-Type": "applicatinon/json",
+            Authorization: `Bearer ${token}`,
+          },
+        })
+          .then((response) => response.json())
+          .then((sales) => {
+            let message = sales.message;
+            const history = sales.history;
+            history.map((salesHistory) => {
+              return (document.querySelector("table").innerHTML += `<tr key=${
+                salesHistory.id
+              }> <td>${salesHistory.name}</td>
+                    <td>${salesHistory.pricePerUnit}</td>
+                    <td>${salesHistory.quantity}</td>
+                    <td>${salesHistory.totalPayed}</td>
+                    <td>${salesHistory.updatedAt.split("T")[0]}</td>
+                    </tr>`);
             });
-        }
-
-        // Call the function to populate the table on page load
-        populateHistoryTable();
+          });
+      } catch (error) {
+        console.log(error);
+      }
     </script>
-</body>
+  </body>
 </html>

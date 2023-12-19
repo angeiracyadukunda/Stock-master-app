@@ -1,29 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CHANGE PASSWORD</title>
-</head>
-<body>  
-  <!-- GO BACK BUTTON  -->
-           
-  <button><a href="./dashboard.html" style="text-decoration: none;
-    color: #141414;
-    font-size: 16px;
-    background-color: #ffffff;
-    border-radius: 2px;
-">Go Back</a></button>
-<!--  ENDS FROM HERE -->
+  </head>
+  <body>
+    <!-- GO BACK BUTTON  -->
 
+    <button>
+      <a
+        href="./dashboard.html"
+        style="
+          text-decoration: none;
+          color: #141414;
+          font-size: 16px;
+          background-color: #ffffff;
+          border-radius: 2px;
+        "
+        >Go Back</a
+      >
+    </button>
+    <!--  ENDS FROM HERE -->
 
-<!------- CHANGE PASSWORD  -->
+    <!------- CHANGE PASSWORD  -->
     <section id="change_password">
-
       <div class="wrapper">
-
         <div id="main-container">
-
           <div id="img">
             <img
               src="./image/cool-log.png"
@@ -34,62 +37,91 @@
           </div>
 
           <form action="" id="form_input">
-
-            <input  type="email"  name=""  id="email"  placeholder="Enter your Email"/>
-            <button>Change Password</button>
-
+            <input type="email" id="email" placeholder="Enter your Email" />
+            <button id="resetPassword">Reset Password</button>
           </form>
-
         </div>
-        </div>
-      </section>
-      <!-- CHANGE PASSWORD ENDS FROM HERE -->
+      </div>
+    </section>
+    <!-- CHANGE PASSWORD ENDS FROM HERE -->
 
+    <!-- JAVASCRIPT FOR CHANGING PASSWORD -->
+    <style>
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10em;
+        background: #3d3123;
+      }
+      form input {
+        outline: none;
+        padding: 10px;
+        font-size: 18px;
+        background: none;
+        caret-color: #5372f0;
+        border-radius: 5px;
+        border: 1px solid #bfbfbf;
+        border-bottom-width: 2px;
+        transition: all 0.2s ease;
+      }
+      .wrapper {
+        width: 380px;
+        padding: 40px 30px 50px 30px;
+        background: #fff;
+        border-radius: 5px;
+        text-align: center;
+        box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.1);
+      }
 
+      button {
+        height: 50px;
+        width: 380px;
+        margin-top: 30px;
+        color: #fff;
+        padding: 0;
+        border: none;
+        border-radius: 8px;
+        background: #3d3123;
+        cursor: pointer;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+    </style>
 
-      
-      <!-- JAVASCRIPT FOR CHANGING PASSWORD -->
-<style>
-  body{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 10em;
-  background: #3d3123;
+    <script>
+      document
+        .getElementById("resetPassword")
+        .addEventListener("click", async (e) => {
+          e.preventDefault();
+          // sending reset password for error
+          try {
+            const email = document.getElementById("email").value;
+            const emailReset = {
+              email,
+            };
 
-}
-form input{
-  outline: none;
-  padding:  10px;
-  font-size: 18px;
-  background: none;
-  caret-color: #5372F0;
-  border-radius: 5px;
-  border: 1px solid #bfbfbf;
-  border-bottom-width: 2px;
-  transition: all 0.2s ease;
-}
-.wrapper {
-    width: 380px;
-    padding: 40px 30px 50px 30px;
-    background: #fff;
-    border-radius: 5px;
-    text-align: center;
-    box-shadow: 10px 10px 15px rgba(0,0,0,0.1);
-}
-
-  button{
-    height: 50px;
-    width: 380px;
-    margin-top: 30px;
-    color: #fff;
-    padding: 0;
-    border: none;
-    border-radius: 8px;
-    background: #3d3123;
-    cursor: pointer;
-    border-bottom: 2px solid rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-}
-
-</style>
+            // console.log(emailReset.userEmail);
+            const url = "http://localhost:3000/users/reset-password";
+            await fetch(url, {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(emailReset),
+            })
+              .then((data) => data.json())
+              .then((result) => {
+                if (result.message === "Email sent successfully") {
+                  alert(result.message);
+                  location.href = "login.html";
+                } else {
+                  alert(result.message);
+                }
+              })
+              .catch((error) => console.log(error));
+          } catch (error) {
+            console.log(error);
+          }
+        });
+    </script>
+  </body>
+</html>
