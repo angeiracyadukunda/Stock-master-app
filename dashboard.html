@@ -88,9 +88,21 @@
               ><i class="fas fa-history"></i> History</a
             >
           </div>
+          <div>
+            <button id="logout">Log out</button>
+          </div>
         </div>
       </div>
     </div>
     <!-----------------MAIN SECTION WHERE ICONS ARE ENDS FROM HERE -->
+    <script>
+      document.getElementById("logout").addEventListener("click", (e) => {
+        e.preventDefault();
+        const logOut = localStorage.clear();
+        if (logOut.Ok) {
+          location.href = "login.html";
+        }
+      });
+    </script>
   </body>
 </html>
