@@ -53,18 +53,17 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  height: 100vh;
+  /* height: 100vh; */
 }
 #navbar div ul {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  /* padding: 50px; */
+  gap: 1rem;
+  padding: 50px;
   justify-content: center;
   align-items: flex-start;
 }
-
 #navbar div a:hover {
   background-color: #3d3123;
   color: black;
