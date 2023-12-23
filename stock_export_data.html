@@ -39,17 +39,27 @@
         <!-- LOGO END HERE -->
 
         <h2>Stock Export Data</h2>
+        <div
+          id="message"
+          style="
+            display: none;
+            font-size: x-small;
+            padding: 8px 0 8px 0;
+            text-align: center;
+            margin-top: 4px;
+          "
+        ></div>
         <form id="export-form">
           <label for="product">Product:</label>
           <select id="product" name="product" required>
-            <option value="product1">Select...</option>
+            <option value="Select...">Select...</option>
           </select>
 
           <label for="quantity">Quantity:</label>
           <input type="number" id="quantity" name="quantity" />
 
           <label for="destination">Price Per Unit</label>
-          <input type="text" id="price" name="destination" />
+          <input type="text" id="price" disabled style="cursor: not-allowed" />
 
           <label for="destination">Total Price </label>
           <input

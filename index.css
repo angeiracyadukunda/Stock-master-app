@@ -5,7 +5,8 @@
 }
 
 body {
-  background: linear-gradient(90deg, rgb(0 0 0 / 40%), rgb(18 7 0)), url(./image/istock.jpg);
+  background: linear-gradient(90deg, rgb(0 0 0 / 40%), rgb(18 7 0)),
+    url(./image/istock.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;

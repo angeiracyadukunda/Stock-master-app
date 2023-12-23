@@ -87,7 +87,11 @@
               <td>${product.pricePerUnit}</td>
               <td>${product.totalPrice}</td>
               <td>${product.createdAt.split("T")[0]}</td>
-              <td><button onClick="delet('${product._id}')">Delete</button></td>
+              <td><input type="submit" value="Delete" onClick="delet('${
+                product._id
+              }')" style="background-color:rgb(128, 8, 8); cursor:pointer;color:white"> <input type="submit" value="Update" onClick="updateProduct('${
+                          product._id
+                        }')" style="background-color:skyblue; cursor:pointer;color:white"></td>
             </tr>
                       `;
                       });
@@ -142,6 +146,25 @@
       </div>
     </section>
 
+    <div class="popup">
+      <img src="./image/cool-log.png" alt="Update" />
+      <div id="popup">
+        <label for="purchasedProd">Product Name:</label>
+        <input type="text" id="purchasedProd" name="product" />
+
+        <label for="quantityNumber">Quantity:</label>
+        <input type="number" id="quantityNumber" name="quantity" min="1" />
+
+        <label for="pricePurchase">Price per Unit:</label>
+        <input type="number" id="pricePurchase" name="price" min="1" />
+
+        <button id="record-product">Record Product</button>
+      </div>
+    </div>
+
     <!-- AVAILABLE STOCK ENDS FROM HERE -->
+    <script>
+      function updateProduct(id) {}
+    </script>
   </body>
 </html>
