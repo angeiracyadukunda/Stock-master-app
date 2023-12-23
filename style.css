@@ -398,4 +398,47 @@ a {
   padding: 20px;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #3d3123;
+  border-radius: 6px;
+  font-family: puppins;
+  position: absolute;
+  top: 0%;
+  left: 25%;
+  transform: -50% -50% scale(0.1);
+  visibility: hidden;
+}
+.popup img {
+  width: 25%;
+}
+
+.open-popup {
+  visibility: visible;
+  transform: translate(-50% -50%) scale(1);
+  transition: 0.4s 0.4s;
+  top: 20%;
+}
+#popup {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.5rem;
+  color: #fff;
+}
+.btns {
+  display: flex;
+  justify-content: space-between;
+}
+
+#popup #Update-product {
+  background-color: skyblue;
+  width: 70%;
+}
+
+#popup #cancel {
+  width: 28%;
+}
+#popup #cancel:hover {
+  color: skyblue;
 }

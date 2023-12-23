@@ -43,6 +43,12 @@ document
           })
             .then((product) => product.json())
             .then((recorded) => {
+              // RESETING THE INPUT
+              document.getElementById("purchasedProd").value = "";
+              document.getElementById("quantityNumber").value = "";
+              document.getElementById("pricePurchase").value = "";
+
+              // DISPLAYING THE MESSAGES
               const message = () => {
                 document.getElementById("message").style.display = "block";
                 document.getElementById("message").style.color = "white";
